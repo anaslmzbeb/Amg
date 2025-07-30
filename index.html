@@ -1,0 +1,123 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aspect Hosting</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+    }
+    header {
+      background: #1e293b;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: #38bdf8;
+    }
+    .plans {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+    .plan {
+      background: #1e293b;
+      border-radius: 12px;
+      padding: 1.5rem;
+      width: 300px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+    .plan h2 {
+      margin-top: 0;
+      color: #38bdf8;
+    }
+    .plan p {
+      margin: 0.3rem 0;
+    }
+    .price {
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+    .buy {
+      margin-top: 1rem;
+      background: #38bdf8;
+      color: #0f172a;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .payment-section {
+      display: none;
+      text-align: center;
+      margin: 2rem auto;
+      max-width: 600px;
+      background: #1e293b;
+      padding: 2rem;
+      border-radius: 12px;
+    }
+    .wallet {
+      word-break: break-all;
+      font-weight: bold;
+      font-size: 1rem;
+      background: #334155;
+      padding: 0.5rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+    img.qr {
+      margin-top: 1rem;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Aspect Hosting</h1>
+    <p>Affordable VPS Hosting — Pay with Bitcoin Only</p>
+  </header>  <div class="plans">
+    <div class="plan">
+      <h2>Starter Plan</h2>
+      <p>1 vCPU</p>
+      <p>2GB RAM</p>
+      <p>20GB SSD</p>
+      <p class="price">0.0005 BTC</p>
+      <button class="buy" onclick="showPayment('0.0005')">Buy Now</button>
+    </div>
+    <div class="plan">
+      <h2>Pro Plan</h2>
+      <p>2 vCPU</p>
+      <p>4GB RAM</p>
+      <p>50GB SSD</p>
+      <p class="price">0.0012 BTC</p>
+      <button class="buy" onclick="showPayment('0.0012')">Buy Now</button>
+    </div>
+    <div class="plan">
+      <h2>Ultra Plan</h2>
+      <p>4 vCPU</p>
+      <p>8GB RAM</p>
+      <p>100GB SSD</p>
+      <p class="price">0.0025 BTC</p>
+      <button class="buy" onclick="showPayment('0.0025')">Buy Now</button>
+    </div>
+  </div>  <div class="payment-section" id="payment">
+    <h2>Send Payment</h2>
+    <p>Please send <span id="amount"></span> BTC to the wallet below:</p>
+    <div class="wallet">bc1prx37vn5x92s275lerujsxp2hvv6007vkws9z2dnden3zhpq6s72ql3k7pq</div>
+    <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=bc1prx37vn5x92s275lerujsxp2hvv6007vkws9z2dnden3zhpq6s72ql3k7pq" alt="QR Code">
+  </div>  <script>
+    function showPayment(amount) {
+      document.getElementById('payment').style.display = 'block';
+      document.getElementById('amount').innerText = amount;
+      window.scrollTo({ top: document.getElementById('payment').offsetTop, behavior: 'smooth' });
+    }
+  </script></body>
+</html>
